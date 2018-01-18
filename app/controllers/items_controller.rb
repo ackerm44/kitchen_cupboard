@@ -1,19 +1,19 @@
 class ItemsController < ApplicationController
 
   def new
-    @pantry = Pantry.find(params[:pantry_id])
-    @item = @pantry.items.build
+    @item = Item.new
   end
 
   def create
     raise params.inspect
-    #@item = Item.new
-    #if @item.save(item_params)
-      #Category....
-      #redirect_to ...
-    #else
-      #render :new
-    #end
+    @item = Item.new
+    # if @item.save(item_params)
+    #   # if
+    #   # Category....
+    #   # redirect_to ...
+    # else
+    #   render :new
+    # end
 
   end
 

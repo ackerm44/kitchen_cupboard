@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   #Root should route to log-in/sign-up.
-  resources :pantries do
-    resources :items
-  end
-
+  resources :items
   resources :categories
-
+  #possibly eventually nested items show and a cateogory show page
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
