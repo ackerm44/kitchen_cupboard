@@ -1,6 +1,7 @@
 To-Do:
--  Nested resource
-  -- category/1/item/3
+-  Nested resource   *Come back to this*
+  -- pantry/1/item/3
+-  Fix nested new item form, strong params
 
 ADD ITEM TO PANTRY FORM
 -  User can add items to their pantry and put them in a category (nested form)
@@ -15,7 +16,7 @@ ADD ITEM TO PANTRY FORM
 
 -  DRY, minimal logic in controllers
 -  30 minute coding session
-
+-  Narrow down routes
 
 ROUTES
 User: new, create, edit, update, show, destroy
