@@ -1,0 +1,4 @@
+<%= form_for @item do |f| %>
+  <%= f.collection_select :name, Item.all, :name, :name %>
+  <%= f.submit %>
+<% end %>

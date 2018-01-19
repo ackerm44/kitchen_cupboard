@@ -1,3 +1,16 @@
+<% if @item.errors.any? %>
+  <div id= "error_explanation" >
+    <h2>
+      <%= pluralize(@item.errors.count, "error") %>
+      prohibited this item from being saved: </h2>
+    <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li> <%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 
 <%= form_for @item do |f| %>
   <%= f.label :name %>
@@ -12,15 +25,19 @@
   <!-- Category select or new -->
   <fieldset>
     <legend>Select or add a new category</legend>
-    <br>
+    <!-- <br>
     <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "Select a category" %>
-    <br><br>
-
-    <%= f.fields_for :categories, @item.build_category do |category_builder| %>
-      <%= category_builder.label :name, "New category:" %>
+    <br><br> -->
+    <p>New Category</p>
+    <%= f.fields_for :category do |category_builder| %>
+      <%= category_builder.label :name %>
       <%= category_builder.text_field :name %><br><br>
+      <%= category_builder.label :description %>
+      <%= category_builder.text_field :description %><br><br>
     <% end %>
   </fieldset><br><br>
+
+  <%= hidden_field_tag "item[pantry_id]", @item.pantry.id %>
 
   <%= f.submit %>
 <% end %>

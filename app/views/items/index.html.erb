@@ -1,0 +1,11 @@
+<h1>All Items in Pantry </h1>
+
+
+<ul>
+  <% @items.each do |item| %>
+    <li><%= item.name %> | Inventory <%= item.inventory %></li>
+  <% end %>
+</ul>
+
+<h3>Quick Add Item to Pantry</h3>
+<%= render 'quickform' %>
